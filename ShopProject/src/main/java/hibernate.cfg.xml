@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+
+		<!-- Polaczenie do DB HSQL -->
+		<property name="connection.driver_class">org.hsqldb.jdbcDriver</property>
+		<property name="connection.url">jdbc:hsqldb:hsql://localhost/workdb</property>
+		<property name="dialect">org.hibernate.dialect.HSQLDialect</property>
+		<property name="hibernate.connection.username">SA</property>
+		<property name="hibernate.connection.password"></property>
+
+		<!-- INNE -->
+		<property name="show_sql">true</property>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="connection.pool">100</property>
+
+		<!-- Encje -->
+		<mapping class="com.shop.listeners.Customer" />
+		<mapping class="com.shop.projectfiles.Company" />
+		<mapping class="com.shop.projectfiles.TShirt" />
+		
+	</session-factory>
+</hibernate-configuration>
+   
